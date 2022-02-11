@@ -15,7 +15,7 @@ public class UserOperationException extends RuntimeException {
     }
 
     public UserOperationException(String operation, Throwable t) {
-        super("Error in " + operation + " of User", t);
+        super(String.format("Error in %s of User", operation), t);
     }
 
 }

@@ -11,7 +11,8 @@ public class Util {
 
     public static Connection getLocalConnection() throws SQLException {
         Connection c = getConnection("jdbc:mysql://localhost:3306", "keinnard", "123Qwe");
-        c.prepareStatement("USE Kata").execute();
+        c.createStatement().executeUpdate("USE Kata");
+        c.setAutoCommit(false);       
         return c;
     }
 

@@ -1,6 +1,5 @@
 package jm.task.core.jdbc;
 
-import java.util.ArrayList;
 import java.util.stream.Stream;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
@@ -22,8 +21,8 @@ public class Main {
             us.saveUser(u.getName(), u.getLastName(), u.getAge());
             System.out.println(String.format("User с именем – %s добавлен в базу данных", u.getName()));
         });
-        
-        us.removeUserById(2);
+
+        // us.removeUserById(2);
         us.getAllUsers().stream().forEach(u -> System.out.println(u));
         us.cleanUsersTable();
         us.dropUsersTable();
